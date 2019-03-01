@@ -9,7 +9,7 @@ server:
 spring:
     profiles: dev
     application: 
-        name: vs-eureka-config-client-dev
+        name: vs-eureka-config-client
 
 eureka:
   instance:
@@ -18,21 +18,21 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://127.0.0.1:7001/eureka/
 ---
 server:
-  port: 7002
+  port: 7001
 
 spring:
     profiles: test
     application: 
-        name: vs-eureka-config-client-test
+        name: vs-eureka-config-client
 
 eureka:
   instance:
-    hostname: eureka7002.com
+    hostname: eureka7001.com
   client:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://127.0.0.1:7001/eureka/
